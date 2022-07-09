@@ -1,4 +1,4 @@
-import { submitTask } from "./todo";
+import { pushTask } from "./taskFormPush";
 
 
 export function buildTaskForm() {
@@ -18,7 +18,8 @@ export function buildTaskForm() {
     const buildAddBar = (() => {
         const taskForm = document.createElement('form');
         taskForm.id = 'form';
-        taskForm.setAttribute('action', 'javascript:submitTask()')
+        taskForm.setAttribute('onsubmit', pushTask)
+        // taskForm.setAttribute('action', 'javascript:submitTask()')
         taskForm.classList.add('task-form');
         content.appendChild(taskForm);
 
@@ -95,14 +96,14 @@ export function buildTaskForm() {
             submitContainer.classList.add('submit-container');
             taskForm.appendChild(submitContainer);
     
-            const submit = document.createElement('button');
+            const submit = document.createElement('input');
             submit.classList.add('submit');
             submit.innerText = 'Add';
             submit.setAttribute('type', 'submit')
             submitContainer.appendChild(submit);
 
             // link to submit function 
-            submit.addEventListener('click', submitTask);
+            // submit.addEventListener('click', pushTask);
 
             // prevent task reset 
             // submit.addEventListener("click", function(event){

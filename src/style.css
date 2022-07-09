@@ -86,7 +86,7 @@
         }
 
     
-/*********** || LEFT SIDEBAR || *****************************************/
+/*********** || PROJECT TABLE SIDEBAR || *****************************************/
 
 .sidebar {
     grid-column: 1 / 2;
@@ -103,8 +103,47 @@
         font-size: 40px;
         padding-top: 20px;
         color: var(--white);
+        margin-bottom: 10px;
         
     }
+
+    .project-table {
+        width: 100%;
+
+    }
+
+    .project-table-item {
+        width: 100%;
+        padding: 10px;
+
+
+    }
+
+    .project-table-button,
+    .project-table-button-selected {
+        width: 100%;
+
+        background-color: var(--dark);
+        border: 2px solid var(--white);
+        color: white;
+
+        padding: 10px;
+        font-size: 25px;
+    }
+
+    .project-table-button:hover{
+        background-color: var(--gray);
+    }
+
+    .project-table-button-selected {
+        background-color: var(--white);
+        color: var(--dark);
+        font-weight: bold;
+    }
+
+
+
+
 
 /*********** || RIGHT SIDEBAR HEADER || *****************************************/
 
@@ -161,7 +200,7 @@
 
         .submit {
             justify-content: center;
-            
+
             width: 50%;
             font-size: 20px;
         }
