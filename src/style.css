@@ -1,0 +1,168 @@
+/*********** || GENERAL STYLES || *****************************************/
+
+:root {
+    --white:white;
+    --soothing-breeze:#b2bec3;
+    --gray:#636e72;
+    --dark:#2d3436;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+        #content {
+            display: grid;
+
+            height: 100%;
+            width: 100%;
+
+
+            grid-template-columns: 2fr 5fr 2fr;
+            grid-template-rows: 1fr 80px 12fr;
+            
+        }
+
+            input[type=checkbox] {
+                transform: scale(1.5);
+            }
+            
+/*********** || HEADER || *****************************************/
+
+.header {
+    display: flex;
+    justify-content: center;
+    
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+    padding: 10px;
+
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+
+    font-size: 30px;
+    color: var(--white);
+}
+
+/*********** || MAIN || *****************************************/
+
+.main {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+
+}
+
+    .task { 
+
+        height: 50px;
+        background-color: #dfe6e948;
+
+        font-size: 25px;
+    }
+
+        th {
+            width: 400px;
+
+            background-color: var(--gray);
+            color: var(--white);
+            font-size: 25px; 
+        }
+
+        td {
+            align-items: center;
+            text-align: center;
+        }
+
+    
+/*********** || LEFT SIDEBAR || *****************************************/
+
+.sidebar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+
+    background-color: var(--dark);
+}
+
+    .projects-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        font-size: 40px;
+        padding-top: 20px;
+        color: var(--white);
+        
+    }
+
+/*********** || RIGHT SIDEBAR HEADER || *****************************************/
+
+.form-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    
+    background-color: var(--dark);
+    color: var(white);
+
+    font-size: 40px;
+}
+
+    .form-header button {
+        background-color: var(--dark);
+        border: none;
+
+        font-size: 40px;
+    }
+
+/*********** || RIGHT SIDEBAR (TASK / PROJECT FORMS) || *********************/
+
+
+.task-form {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+
+    background-color: var(--dark);
+
+    color: var(--white);
+}      
+
+    .form-item {
+        display: grid;
+        gap: 10px;
+        height: 160px;
+        padding: 30px;
+    }
+
+        .form-label {
+            font-size: 30px;
+        }
+
+    .submit-container {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 20px;
+    }
+
+        .submit {
+            justify-content: center;
+            
+            width: 50%;
+            font-size: 20px;
+        }
+    
