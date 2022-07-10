@@ -1,6 +1,6 @@
 import { buildTaskForm } from "./buildTaskFormDOM";
 import { buildProjectForm } from "./buildProjectFormDOM";
-
+import { addToProjectSelect } from "./addToProjectSelect";
 
 export function rightSidebarLogic() {
 
@@ -18,6 +18,7 @@ export function rightSidebarLogic() {
             console.log(button.style.color);
             removeLastChild();
             buildTaskForm();
+            addToProjectSelect();
 
         };
     })();

@@ -1,7 +1,8 @@
-import { pushTask } from "./taskFormPush";
+import { pushTask } from "./pushTask";
 
 
 export function buildTaskForm() {
+
 
     // change color of selected button
     const changeButtonColor = (() => {
@@ -14,12 +15,19 @@ export function buildTaskForm() {
     
     const content = document.getElementById('content');  
 
+    /**** PUSH TASK FUNCTION ********/
+    function taskSubmitHandler(event){
+        event.preventDefault();
+        pushTask();
+    }
+    /**** PUSH TASK FUNCTION ********/
+
     // build form 
     const buildAddBar = (() => {
         const taskForm = document.createElement('form');
-        taskForm.id = 'form';
-        taskForm.setAttribute('onsubmit', pushTask)
-        // taskForm.setAttribute('action', 'javascript:submitTask()')
+        taskForm.onsubmit = taskSubmitHandler;
+        taskForm.id = 'task-form';
+        
         taskForm.classList.add('task-form');
         content.appendChild(taskForm);
 
@@ -69,6 +77,7 @@ export function buildTaskForm() {
             formItem.appendChild(dueDateLabel);
     
             const dueDateInput = document.createElement('input');
+            dueDateInput.type = 'date';
             dueDateInput.classList.add('form-input');
             dueDateInput.id = 'form-date';
             formItem.appendChild(dueDateInput);
@@ -90,30 +99,39 @@ export function buildTaskForm() {
             priorityInput.id = 'form-priority';
             formItem.appendChild(priorityInput);
         })();
+
+        const formProject = (() => {
+            const formItem = document.createElement('div');
+            formItem.classList.add('form-item')
+            taskForm.appendChild(formItem);
+    
+            const projectLabel = document.createElement('label');
+            projectLabel.classList.add('form-label');
+            projectLabel.setAttribute('for', 'form-project');
+            projectLabel.innerText = 'Project';
+            formItem.appendChild(projectLabel);
+    
+            const projectInput = document.createElement('select');
+            projectInput.classList.add('form-project');
+            projectInput.id = 'form-project';
+            formItem.appendChild(projectInput);
+
+            const defaultSelect = document.createElement('option');
+            defaultSelect.value = 'None';
+            defaultSelect.innerText = '';
+            projectInput.appendChild(defaultSelect);
+        })();
     
         const addSubmit = (() => {
             const submitContainer = document.createElement('div');
             submitContainer.classList.add('submit-container');
             taskForm.appendChild(submitContainer);
     
-            const submit = document.createElement('input');
+            const submit = document.createElement('button');
             submit.classList.add('submit');
             submit.innerText = 'Add';
             submit.setAttribute('type', 'submit')
             submitContainer.appendChild(submit);
-
-            // link to submit function 
-            // submit.addEventListener('click', pushTask);
-
-            // prevent task reset 
-            // submit.addEventListener("click", function(event){
-            //     event.preventDefault()
-            //   });
-              
-            // reset form fields
-            // submit.addEventListener('click', buildTaskForm);
-
         })();
     })();        
 };
-

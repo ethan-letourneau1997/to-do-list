@@ -10,6 +10,12 @@ import { Project } from './project';
 import { rightSidebarLogic } from './rightSidebarLogic';
 
 import { displayAllTasks } from './displayAllTasks';
+import { addToProjectSelect } from './addToProjectSelect';
+import { showTaskDetails } from './showTaskDetails';
+import { focusTask } from './focusTask';
+// import { pushTask } from './taskFormPush';
+
+
 
 
 
@@ -20,9 +26,12 @@ export var projectList = [];
 createHomePage();
 buildTaskForm();
 rightSidebarLogic();
+
 // createSidebarLogic()
 
 /************** NEW STUFF ***************/
+
+
 
 
 
@@ -53,14 +62,16 @@ let project1 = new Project('Errands', 'simple errands I need to do');
 displayAllTasks();
 
 
+
 for (let i = 0; i < projectList.length; i++){
     createProject(projectList[i]);
 }
 
+addToProjectSelect();
+
 /************** NEW STUFF ***************/
 
+showTaskDetails();
 
-
-
-const errands = document.getElementById('Errands');
+focusTask(taskList[0]);
 

@@ -1,3 +1,4 @@
+import { pushProject } from "./pushProject";
 
 export function buildProjectForm() {
 
@@ -12,9 +13,18 @@ export function buildProjectForm() {
 
     const content = document.getElementById('content');  
 
+    /**** PUSH PROJECT FUNCTION ********/
+    function projectSubmitHandler(event){
+        console.log('test');
+        event.preventDefault();
+        pushProject();
+    }
+    /**** PUSH PROJECT FUNCTION ********/
+
     // build form 
     const buildAddBar = (() => {
         const projectForm = document.createElement('form');
+        projectForm.onsubmit = projectSubmitHandler;
         projectForm.id = 'form';
         projectForm.classList.add('task-form');
         content.appendChild(projectForm);
@@ -51,7 +61,19 @@ export function buildProjectForm() {
             const projectDescriptionInput = document.createElement('input');
             projectDescriptionInput.classList.add('form-input');
             projectDescriptionInput.id = 'project-description';
-            formItem.appendChild(projectDescriptionInput);
-        })();   
+            formItem.appendChild(projectDescriptionInput);  
+        })();  
+
+        const addSubmit = (() => {
+            const submitContainer = document.createElement('div');
+            submitContainer.classList.add('submit-container');
+            projectForm.appendChild(submitContainer);
+    
+            const submit = document.createElement('button');
+            submit.classList.add('submit');
+            submit.innerText = 'Add';
+            submit.setAttribute('type', 'submit')
+            submitContainer.appendChild(submit);
+        })();
     })();      
 };
