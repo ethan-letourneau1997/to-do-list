@@ -1,5 +1,5 @@
 import { buildTaskForm } from "./buildTaskFormDOM";
-import { buildProjectForm } from "./buildProjectFormDOM";
+import { buildProjectForm } from "./buildProjectFormDOM.js";
 import { addToProjectSelect } from "./addToProjectSelect";
 
 export function rightSidebarLogic() {

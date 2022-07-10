@@ -24,7 +24,9 @@ export function createProject(proj){
         button.addEventListener('click', switchProject)
         row.appendChild(button);
 
-        function switchProject(){
+       
+        function switchProject(){     
+            const allProjectsButton = document.getElementById('all-projects');
 
             
             for (let i = 0; i < projectList.length; i++){

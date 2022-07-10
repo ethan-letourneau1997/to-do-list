@@ -1,5 +1,6 @@
-import { pushTask } from "./pushTask";
 
+import { pushTask } from "./pushTask";
+import { focusTask } from "./focusTask";
 
 export function buildTaskForm() {
 
@@ -94,10 +95,27 @@ export function buildTaskForm() {
             priorityLabel.innerText = 'Priority';
             formItem.appendChild(priorityLabel);
     
-            const priorityInput = document.createElement('input');
+            const priorityInput = document.createElement('select');
             priorityInput.classList.add('form-priority');
             priorityInput.id = 'form-priority';
             formItem.appendChild(priorityInput);
+
+            const priorityOptions = (() => {
+                const optionLow = document.createElement('option');
+                optionLow.value = 'Low';
+                optionLow.innerHTML = 'Low';
+                priorityInput.appendChild(optionLow);
+
+                const optionMedium = document.createElement('option');
+                optionMedium.value = 'Medium';
+                optionMedium.innerHTML = 'Medium';
+                priorityInput.appendChild(optionMedium);
+
+                const optionHigh = document.createElement('option');
+                optionHigh.value = 'High';
+                optionHigh.innerHTML = 'High';
+                priorityInput.appendChild(optionHigh);
+            })();
         })();
 
         const formProject = (() => {

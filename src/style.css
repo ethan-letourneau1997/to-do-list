@@ -5,6 +5,7 @@
     --soothing-breeze:#b2bec3;
     --gray:#636e72;
     --dark:#2d3436;
+    --table-background: #dfe6e948;
 }
 
 * {
@@ -68,10 +69,14 @@
     .task { 
 
         height: 50px;
-        background-color: #dfe6e948;
+        background-color: var(--table-background);
 
         font-size: 25px;
     }
+
+        .column-placeholder {
+            width: 100px;
+        }
 
         th {
             width: 400px;
@@ -85,6 +90,27 @@
             align-items: center;
             text-align: center;
         }
+
+            .task-title-container {
+                display: flex;
+                justify-content: space-around;
+            }
+
+                .task-switch-button {
+                    box-sizing: border-box;
+                    background-color:var(--table-background);
+                    width: 50px;
+                    height: 40px;
+                }
+
+                .task-switch-button:focus {
+                    background-color: var(--dark);
+                }
+
+                .task-title {
+                    
+                }
+
 
     
 /*********** || PROJECT TABLE SIDEBAR || *****************************************/
@@ -136,7 +162,7 @@
         background-color: var(--gray);
     }
 
-    .project-table-button-selected {
+    .project-table-button:focus {
         background-color: var(--white);
         color: var(--dark);
         font-weight: bold;
@@ -228,6 +254,9 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+        align-items: center;
+        padding-right: 10px;
+
     }
 
         .focus-section {
@@ -329,3 +358,8 @@
             font-size: 20px;
             
         }
+
+    .edit-input {
+        height: 70%;
+        border-radius: 5px;
+    }

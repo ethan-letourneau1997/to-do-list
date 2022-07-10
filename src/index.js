@@ -1,8 +1,7 @@
 import './style.css';
-import { createHomePage } from './createHomepage';
+import { createHomePage } from './HOMEPAGE/homepageController';
 import { buildTaskForm } from './buildTaskFormDOM';
 
-import { createTask } from "./createTask";
 import { createProject } from "./createProject";
 
 import { Task } from './task';
@@ -12,7 +11,6 @@ import { rightSidebarLogic } from './rightSidebarLogic';
 import { displayAllTasks } from './displayAllTasks';
 import { addToProjectSelect } from './addToProjectSelect';
 import { showTaskDetails } from './showTaskDetails';
-import { focusTask } from './focusTask';
 // import { pushTask } from './taskFormPush';
 
 
@@ -38,11 +36,11 @@ rightSidebarLogic();
 
 
 const createTaskData = (() => {
-    let task1 = new Task('errand1', 'wash clothes', '10/01/22', '!!', 'Errands');
-    let task2 = new Task('school 1', 'make an appointment for fungus', '9/01/22', '!!', 'School');
-    let task3 = new Task('errand2', 'make chiro appoinment', '7/10/22', '!',  'Errands');
-    let task4 = new Task('school 2', 'make week 4 discussion post', '07/08/22', '!!!', 'School');
-    let task5 = new Task('errand3', 'shave beard', '12/24/22', '!!!', 'Errands');
+    let task1 = new Task('Do Laundry', 'wash all clothes and towels', '10/01/22', 'HIGH', 'Errands');
+    let task2 = new Task('Do Homework', 'do all homework', '9/01/22', 'HIGH', 'School');
+    let task3 = new Task('Schedule Appointment', 'make an appoinment', '7/10/22', 'LOW',  'Errands');
+    let task4 = new Task('Order Package', 'order a box', '07/08/22', 'MEDIUM', 'School');
+    let task5 = new Task('Shave', 'shave beard with razor', '12/24/22', 'LOW', 'Errands');
 
     taskList.push(task1);
     taskList.push(task2);
@@ -73,5 +71,5 @@ addToProjectSelect();
 
 showTaskDetails();
 
-focusTask(taskList[0]);
+
 

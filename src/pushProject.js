@@ -16,11 +16,4 @@ export function pushProject() {
     
     projectName.value = "";
     projectDescription.value = "";
-
-    // let select = document.getElementById('form-project');
-    // let option = document.createElement('option');
-    // option.innerText = projectName;
-    // option.value = projectName;
-    // select.appendChild(option);
-
 };

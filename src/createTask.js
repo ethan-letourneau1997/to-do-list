@@ -1,4 +1,5 @@
-
+import { taskList } from ".";
+import { focusTask } from "./focusTask";
 export function createTask (todo) {
 
         
@@ -7,6 +8,28 @@ export function createTask (todo) {
     const task = document.createElement('tr');
     task.classList.add('task');
     table.appendChild(task);
+
+    const taskButtonContainer = document.createElement('td');
+        taskButtonContainer.classList.add('task-title');
+        task.appendChild(taskButtonContainer);
+    
+    const createTaskButton = (() => {
+        const taskButton = document.createElement('button');
+            taskButton.classList.add('task-switch-button');
+            taskButton.id = todo.title;
+            taskButton.addEventListener('click', sortTask);
+            taskButtonContainer.appendChild(taskButton);
+
+            function sortTask() {
+                for(let i = 0; i < taskList.length; i++){
+                    if (taskList[i].title == taskButton.id){
+                        focusTask(taskList[i]);
+                    } 
+                };
+            };
+    })();
+    
+        
 
     const addTaskTitle = (() => {
         const taskTitle = document.createElement('td');
