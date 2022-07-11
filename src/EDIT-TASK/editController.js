@@ -13,6 +13,7 @@ export function editTask(task) {
 
     let container = document.getElementById('info-container');
 
+  
 
     const selectTask = (() => {
         for(let i =0; i < taskList.length;i++ ){
@@ -201,7 +202,4 @@ export function editTask(task) {
     
 };
 
-// description 3
-// date 5
-//priority 7 
-// project-focus 9
+

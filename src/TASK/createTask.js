@@ -1,4 +1,4 @@
-import { taskList } from ".";
+import { taskList } from "..";
 import { focusTask } from "./focusTask";
 export function createTask (todo) {
 

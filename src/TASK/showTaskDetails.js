@@ -1,4 +1,4 @@
-import { taskList } from ".";
+import { taskList } from "..";
 
 export function showTaskDetails() {
     let task = taskList[0];

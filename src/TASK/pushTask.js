@@ -1,6 +1,10 @@
-import { taskList } from ".";
+import { taskList } from "..";
 import { Task } from "./task";
 import { createTask } from "./createTask";
+import { storeTaskList } from "../EDIT-TASK/storeTaskList";
+import { removeTableRows } from "./removeTaskTableRows";
+import { displayAllTasks } from "./displayAllTasks";
+
 
 export function pushTask() {
 
@@ -12,8 +16,11 @@ export function pushTask() {
 
     let task = new Task(title.value, description.value, date.value, priority.value, project.value);
     taskList.push(task);
+    
+    
 
-    createTask(task);
+    // Put the object into storage
+    storeTaskList();
     
     title.value = "";
     description.value = "";
@@ -21,5 +28,8 @@ export function pushTask() {
     priority.value = "";
     project.value = "";
 
-    console.log(taskList);
+    removeTableRows();
+    displayAllTasks();
+
+  
 };

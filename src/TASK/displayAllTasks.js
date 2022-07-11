@@ -1,4 +1,4 @@
-import { taskList } from ".";
+import { taskList } from "..";
 import { createTask } from "./createTask";
 
 export function displayAllTasks() {

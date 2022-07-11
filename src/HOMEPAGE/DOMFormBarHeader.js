@@ -1,3 +1,5 @@
+
+
 export function buildFormBarHeader() {
     let content = document.getElementById('content');
     const formHeader = document.createElement('div');
@@ -24,5 +26,7 @@ export function buildFormBarHeader() {
         projectButton.id = 'project-button';
         projectButton.innerText = 'Project';
         formHeader.appendChild(projectButton);
+
+        
     })();  
 }; 

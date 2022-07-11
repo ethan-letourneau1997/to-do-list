@@ -1,8 +1,8 @@
-import { buildHeader } from "./buildHeader";
-import { buildSidebar } from "./buildProjectBar";
-import { buildMain } from "./buildMain";
-import { buildFormBarHeader } from "./buildFormBarHeader";
-import { buildTaskFocus } from "./buildTaskFocus";
+import { buildHeader } from "./DOMHeader";
+import { buildSidebar } from "./DOMProjectBar";
+import { buildMain } from "./DOMMain";
+import { buildFormBarHeader } from "./DOMFormBarHeader";
+import { buildTaskFocus } from "./DOMTaskFocus";
 
 
 export function createHomePage() {

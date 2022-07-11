@@ -1,21 +1,78 @@
 import './style.css';
 import { createHomePage } from './HOMEPAGE/homepageController';
-import { buildTaskForm } from './buildTaskFormDOM';
+import { buildTaskForm } from './TASK/DOMTaskForm';
 
-import { createProject } from "./createProject";
+import { createProject } from "./PROJECT/createProject";
 
-import { Task } from './task';
-import { Project } from './project';
+import { Task } from './TASK/task';
+import { Project } from './PROJECT/project';
 import { rightSidebarLogic } from './rightSidebarLogic';
 
-import { displayAllTasks } from './displayAllTasks';
-import { addToProjectSelect } from './addToProjectSelect';
-import { showTaskDetails } from './showTaskDetails';
-// import { pushTask } from './taskFormPush';
+import { displayAllTasks } from './TASK/displayAllTasks';
+
+import { addToProjectSelect } from './PROJECT/addToProjectSelect';
 
 
 
 
+/************** STORE TASKS ****************/
+
+// const retrievedTaskList = [];
+
+// const taskStorage = (() => {
+//     var retrievedTasks = localStorage.getItem('taskStorage');
+
+//     let parsedTaskList = JSON.parse(retrievedTasks);
+    
+     
+//     function makeTaskList(array){
+//         for(let i=0; i<array.length;i++){
+//             let task = new Task(array[i].title, array[i].description, array[i].dueDate, array[i].priority, array[i].project);
+//             retrievedTaskList.push(task);  
+//         };  
+//     }; 
+//     makeTaskList(parsedTaskList);
+// })();
+
+// let filteredTasks = retrievedTaskList.filter(function(e) {
+//     return e.title != "";
+// });
+
+
+/************** STORE PROJECTS ****************/
+
+// localStorage.removeItem("storedProjects");
+
+// var retrievedProject = localStorage.getItem('storedProject');
+
+
+
+// let parsedProjectList = JSON.parse(retrievedProject);
+
+
+// const retrievedProjectList = [];
+
+// function makeProjectList(array){
+//     for(let i=0; i<array.length;i++){
+//         let project = new Project(array[i].name, array[i].description);
+//         retrievedProjectList.push(project);  
+//     };  
+// }; 
+
+// console.log(retrievedProjectList);
+
+// makeProjectList(parsedProjectList);
+// console.log(retrievedProjectList);
+
+// let filteredProjectList = retrievedProjectList.filter(function(e) {
+//     return e.name != "";
+// });
+
+// console.log(filteredProjectList);
+
+
+
+/*****************************************************/
 
 export var taskList = [];
 export var projectList = [];
@@ -32,7 +89,7 @@ rightSidebarLogic();
 
 
 
-
+// localStorage.removeItem("storedProject");
 
 
 const createTaskData = (() => {
@@ -69,7 +126,29 @@ addToProjectSelect();
 
 /************** NEW STUFF ***************/
 
-showTaskDetails();
 
 
 
+// var testObject = { 'one': 1, 'two': 2, 'three': 3 };
+
+// // Put the object into storage
+// const storeProject = projectList;
+// localStorage.setItem('storedProject', JSON.stringify(storeProject));
+
+// console.log(projectList);
+
+
+
+// // Retrieve the object from storage
+
+
+// // Put the object into storage
+// localStorage.setItem('testObject', JSON.stringify(testObject));
+
+// // Retrieve the object from storage
+// var retrievedObject = localStorage.getItem('testObject');
+
+// console.log('retrievedObject: ', JSON.parse(retrievedObject));
+
+// console.log(projectList);
+// console.log(taskList);

@@ -1,6 +1,6 @@
-import { projectList, taskList } from ".";
-import { removeTableRows } from "./removeTableRows";
-import { createTask } from "./createTask";
+import { projectList, taskList } from "..";
+import { removeTableRows } from "../TASK/removeTaskTableRows";
+import { createTask } from "../TASK/createTask";
 
 
 export function createProject(proj){
@@ -23,6 +23,7 @@ export function createProject(proj){
         button.innerText = proj.name;
         button.addEventListener('click', switchProject)
         row.appendChild(button);
+        
 
        
         function switchProject(){     

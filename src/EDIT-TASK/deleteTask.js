@@ -1,7 +1,8 @@
 import { taskList } from "..";
-import { Task } from "../task";
-import { displayAllTasks } from "../displayAllTasks";
-import { removeTableRows } from "../removeTableRows";
+import { Task } from "../TASK/task";
+import { displayAllTasks } from "../TASK/displayAllTasks";
+import { removeTableRows } from "../TASK/removeTaskTableRows";
+import { storeTaskList } from "./storeTaskList";
 
 export function deleteTask(){
     for (let i = 0; i < taskList.length; i++){
@@ -9,8 +10,11 @@ export function deleteTask(){
         if (taskList[i].title == title.innerText){
             delete taskList[i];
             taskList[i] = new Task("","","","","");
+
+            
             removeTableRows();
-            return displayAllTasks();
+            displayAllTasks();
+            storeTaskList();
             
             
             
